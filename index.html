@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Testing WASM library</title>
+</head>
+<body>
+<style type="text/css">
+    h1 {
+        color: rgb(34, 6, 216);
+        font-family: "Arial", sans-serif
+    }
+
+    h2 {
+      color: rgb(2, 131, 181);
+      font-family: "Arial", sans-serif
+    }
+
+    pre {
+        color: rgba(0, 0, 0, 1);
+        background-color: #ffffff;
+        padding: 20px;
+    }
+
+    #private-key-hex-textbox {
+        width:400px;
+    }
+
+    #derive-keys-btn {
+        background-color: #aaaaaa;
+        width:50px;
+    }
+
+    .label {
+        font-size: small;
+        padding-top: 20px;
+    }
+
+    .longbox {
+        width:400px;
+    }
+</style>
+
+<script src="./bootstrap.js"></script>
+<noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+
+<h1>Interact with a Cloud Lotus</h1>
+
+<h2>Settings</h2>
+
+<div class=label>Private Key (secp256k1)</div>
+<input type="text" id="private-key-hex-textbox" value="27067de53aedf1540a89337b1e2bb1fb2e1d5ecc361fac67272d6faa46b57bd9"></input>
+<input type="button" id="derive-keys-btn" value="derive"></input>
+<pre id="key-output"></pre>
+
+<h2>Post a Message to the Chain</h2>
+<table>
+    <tr>
+        <td>
+            <div class="label">JWT</div>
+            <input type="text" id="jwt-text-box" value=""></input>
+        </td>
+        <td>
+            <div class="label">Cloud Lotus Ip:Port</div>
+            <input type="text" id="ipport-limit-text-box" value=""></input>
+        </td>    
+    </tr>
+</table>
+
+<div class="label">From</div>
+<input type="text" class="longbox" id="from-text-box" value=""></input>
+
+<div class="label">To</div>
+<input type="text" id="to-text-box" class="longbox" value="t1u22r4d6m7e2xxqi7i3h6nsltem267lou6qfsuja"></input>
+
+<div class="label">Amt</div>
+<input type="text" class="longbox" id="amt-text-box" value="100000"></input>
+
+<div class="label">Method</div>
+<input type="text" class="longbox" id="method-text-box" value="0"></input>
+
+<div class="label">Params</div>
+<input type="text" class="longbox" id="params-text-box" value=""></input>
+
+<div class="label">Nonce</div>
+<input type="text" id="nonce-text-box" value="115"></input>
+
+<table>
+    <tr>
+        <td>
+            <div class="label">Gas Price</div>
+            <input type="text" id="gas-price-text-box" value="1000"></input>
+        </td>
+        <td>
+            <div class="label">Gas Limit</div>
+            <input type="text" id="gas-limit-text-box" value="1000000"></input>
+        </td>    
+    </tr>
+</table>
+<input type="button" id="generate-req-btn" value="ok"></input>
+
+
+<pre id="output"></pre>
+</body>
+</html>

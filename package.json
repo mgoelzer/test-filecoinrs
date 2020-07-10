@@ -1,0 +1,34 @@
+{
+  "name": "example-filecoin-browser",
+  "author": "Zondax GmbH",
+  "license": "Apache-2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server",
+    "certificate": "openssl req -nodes -config certs/openssl.cnf -new -x509 -keyout certs/server.key -out certs/server.cert; openssl x509 -in certs/server.cert -out certs/cert.pem -outform PEM"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zondax/filecoin-rs"
+  },
+  "keywords": [
+    "webassembly",
+    "wasm",
+    "rust",
+    "filecoin"
+  ],
+  "dependencies": {
+    "@ledgerhq/hw-transport-u2f": "^5.15.0",
+    "@ledgerhq/hw-transport-webusb": "^5.15.0",
+    "@zondax/filecoin-signer-wasm": "^0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.1.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
